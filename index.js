@@ -21,7 +21,8 @@ function unshift(arr, item) {
 
 function shift(arr) {
   const firstItem = arr[0]; //we want to target the first item in the array
-  for (let i = 0; i < arr.length - 1; i++) { //we want to move all the items in the array one index to the left
+  for (let i = 0; i < arr.length - 1; i++) {
+    //we want to move all the items in the array one index to the left
     arr[i] = arr[i + 1]; //we want to move the item to the left one index
   }
   arr.length = arr.length - 1; //we want to remove the last item in the array
@@ -30,9 +31,9 @@ function shift(arr) {
 
 function hasDuplicates(arr) {
   let hasDupes = false;
-  for(let i = 0; i < arr.length; i++) {
-    for(let j = i + 1; j < arr.length; j++) {
-      if(arr[i] === arr[j]) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
         hasDupes = true;
       }
     }
@@ -40,4 +41,16 @@ function hasDuplicates(arr) {
   return hasDupes;
 }
 
-module.exports = { push, pop, unshift, shift, hasDuplicates };
+function countLetters(arr) {
+  let countObj = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (!countObj[arr[i]]) {
+      countObj[arr[i]] = 1;
+    } else {
+      countObj[arr[i]]++;
+    }
+  }
+  return countObj;
+}
+
+module.exports = { push, pop, unshift, shift, hasDuplicates, countLetters };

@@ -1,4 +1,11 @@
-const { push, pop, unshift, shift, hasDuplicates } = require('./index.js');
+const {
+  push,
+  pop,
+  unshift,
+  shift,
+  hasDuplicates,
+  countLetters,
+} = require('./index.js');
 
 describe('push', () => {
   it('should add an element to the end of an array', () => {
@@ -44,5 +51,17 @@ describe('hasDuplicates', () => {
   it('should return false if an array has no duplicates', () => {
     const arr = ['a', 'b', 'c'];
     expect(hasDuplicates(arr)).toBe(false);
+  });
+});
+
+describe('countLetters', () => {
+  it('should return an object with a key for each letter in the array and a value that counts how many times that letter appears in an array', () => {
+    const arr = ['a', 'c', 'c', 'b', 'a', 'c', 'b', 'b', 'd', 'c'];
+    expect(countLetters(arr)).toEqual({
+      a: 2,
+      c: 4,
+      b: 3,
+      d: 1,
+    });
   });
 });
