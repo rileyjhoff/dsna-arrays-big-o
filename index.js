@@ -28,4 +28,16 @@ function shift(arr) {
   return firstItem; //we want to return the first item in the array
 }
 
-module.exports = { push, pop, unshift, shift };
+function hasDuplicates(arr) {
+  let hasDupes = false;
+  for(let i = 0; i < arr.length; i++) {
+    for(let j = i + 1; j < arr.length; j++) {
+      if(arr[i] === arr[j]) {
+        hasDupes = true;
+      }
+    }
+  }
+  return hasDupes;
+}
+
+module.exports = { push, pop, unshift, shift, hasDuplicates };
