@@ -4,4 +4,10 @@ function push(arr, item) {
   return arr.length;
 }
 
-module.exports = { push };
+function pop(arr) {
+  const lastItem = arr[arr.length - 1];
+  arr.length = arr.length - 1;
+  return lastItem;
+}
+
+module.exports = { push, pop };
